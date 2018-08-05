@@ -70,12 +70,12 @@ class MainActivity : AppCompatActivity() {
     // Performs frame.HitTest and returns if a hit is detected
     private fun updateHitTest(): Boolean {
         val frame = arFragment.arSceneView.arFrame
-        val pt = getScreenCenter()
+        val point = getScreenCenter()
         val hits: List<HitResult>
         val wasHitting = isHitting
         isHitting = false
         if (frame != null) {
-            hits = frame.hitTest(pt.x.toFloat(), pt.y.toFloat())
+            hits = frame.hitTest(point.x.toFloat(), point.y.toFloat())
             for (hit in hits) {
                 val trackable = hit.trackable
                 if (trackable is Plane && trackable.isPoseInPolygon(hit.hitPose)) {
@@ -97,8 +97,8 @@ class MainActivity : AppCompatActivity() {
 
     // Simply returns the center of the screen
     private fun getScreenCenter(): Point {
-        val vw = findViewById<View>(android.R.id.content)
-        return Point(vw.width / 2, vw.height / 2)
+        val view = findViewById<View>(android.R.id.content)
+        return Point(view.width / 2, view.height / 2)
     }
 
     /**
