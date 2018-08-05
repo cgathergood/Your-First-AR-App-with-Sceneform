@@ -1,0 +1,42 @@
+{
+   materials: [
+      {
+         name: "DefaultMaterial",
+         parameters: [
+            {
+               baseColor: null,
+            },
+            {
+               baseColorTint: [
+                  0.59999999999999998,
+                  0.59999999999999998,
+                  0.59999999999999998,
+                  1,
+               ],
+            },
+            {
+               metallic: 0,
+            },
+            {
+               roughness: 1,
+            },
+            {
+               opacity: null,
+            },
+         ],
+         source: "build/sceneform_sdk/default_materials/obj_material.sfm",
+      },
+   ],
+   model: {
+      attributes: [
+         "Position",
+         "TexCoord",
+         "Orientation",
+      ],
+      collision: {},
+      file: "sampledata/1227 Earth_obj_58PjkXNdpPb_6p1sga86QKE/1227 Earth.obj",
+      name: "1227 Earth",
+      scale: 0.018889,
+   },
+   version: "0.51:1",
+}
