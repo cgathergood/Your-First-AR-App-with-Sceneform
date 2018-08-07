@@ -31,10 +31,10 @@ class MainActivity : AppCompatActivity() {
 
         // Adds a listener to the ARSceneView
         // Called before processing each frame
-        arFragment.arSceneView.scene.setOnUpdateListener({ frameTime ->
+        arFragment.arSceneView.scene.addOnUpdateListener { frameTime ->
             arFragment.onUpdate(frameTime)
             onUpdate()
-        })
+        }
 
         // Set the onclick lister for our button
         // Change this string to point to the .sfb file of your choice :)
