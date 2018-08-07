@@ -47,10 +47,10 @@ class MainActivity : AppCompatActivity() {
     private fun showFab(enabled: Boolean) {
         if (enabled) {
             floatingActionButton.isEnabled = true
-            floatingActionButton.show()
+            floatingActionButton.visibility = View.VISIBLE
         } else {
             floatingActionButton.isEnabled = false
-            floatingActionButton.hide()
+            floatingActionButton.visibility = View.GONE
         }
     }
 
