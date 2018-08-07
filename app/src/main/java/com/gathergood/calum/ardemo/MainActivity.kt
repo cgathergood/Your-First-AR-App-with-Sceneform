@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
         // Set the onclick lister for our button
         // Change this string to point to the .sfb file of your choice :)
-        floatingActionButton.setOnClickListener { addObject(Uri.parse("1227 Earth.sfb")) }
+        floatingActionButton.setOnClickListener { addObject(Uri.parse("NOVELO_EARTH.sfb")) }
         showFab(false)
 
     }

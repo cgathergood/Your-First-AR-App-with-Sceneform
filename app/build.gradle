@@ -37,7 +37,7 @@ dependencies {
 
 apply plugin: 'com.google.ar.sceneform.plugin'
 
-sceneform.asset('sampledata/1227 Earth_obj_58PjkXNdpPb_6p1sga86QKE/1227 Earth.obj',
+sceneform.asset('sampledata/NOVELO_EARTH_obj_1I5ip-3VOfv_3LMrB56MuSq/NOVELO_EARTH.obj',
         'default',
-        'sampledata/1227 Earth_obj_58PjkXNdpPb_6p1sga86QKE/1227 Earth.sfa',
-        'src/main/assets/1227 Earth')
+        'sampledata/NOVELO_EARTH_obj_1I5ip-3VOfv_3LMrB56MuSq/NOVELO_EARTH.sfa',
+        'src/main/assets/NOVELO_EARTH')
