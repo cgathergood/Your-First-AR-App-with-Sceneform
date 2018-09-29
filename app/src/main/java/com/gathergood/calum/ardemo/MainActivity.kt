@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
 
         // Set the onclick lister for our button
         // Change this string to point to the .sfb file of your choice :)
+        // https://poly.googleusercontent.com/downloads/0BnDT3T1wTE/85QOHCZOvov/Mesh_Beagle.gltf
         floatingActionButton.setOnClickListener { addObject(Uri.parse("NOVELO_EARTH.sfb")) }
         showFab(false)
 
