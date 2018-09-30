@@ -11,6 +11,7 @@ import com.google.ar.core.HitResult
 import com.google.ar.core.Plane
 import com.google.ar.core.TrackingState
 import com.google.ar.sceneform.AnchorNode
+import com.google.ar.sceneform.assets.RenderableSource
 import com.google.ar.sceneform.rendering.ModelRenderable
 import com.google.ar.sceneform.ux.ArFragment
 import com.google.ar.sceneform.ux.TransformableNode
@@ -38,8 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         // Set the onclick lister for our button
         // Change this string to point to the .sfb file of your choice :)
-        // https://poly.googleusercontent.com/downloads/0BnDT3T1wTE/85QOHCZOvov/Mesh_Beagle.gltf
-        floatingActionButton.setOnClickListener { addObject(Uri.parse("NOVELO_EARTH.sfb")) }
+        floatingActionButton.setOnClickListener { addObject(Uri.parse("https://poly.googleusercontent.com/downloads/0BnDT3T1wTE/85QOHCZOvov/Mesh_Beagle.gltf")) }
         showFab(false)
 
     }
@@ -125,20 +125,24 @@ class MainActivity : AppCompatActivity() {
     /**
      * @param fragment our fragment
      * @param anchor ARCore anchor from the hit test
-     * @param model our 3D model of choice
+     * @param model our 3D model of choice (in this case from our remote url)
      *
      * Uses the ARCore anchor from the hitTest result and builds the Sceneform nodes.
      * It starts the asynchronous loading of the 3D model using the ModelRenderable builder.
      */
     private fun placeObject(fragment: ArFragment, anchor: Anchor, model: Uri) {
         ModelRenderable.builder()
-                .setSource(fragment.context, model)
+                .setSource(fragment.context, RenderableSource.builder().setSource(
+                        fragment.context,
+                        model,
+                        RenderableSource.SourceType.GLTF2).build())
+                .setRegistryId(model)
                 .build()
                 .thenAccept {
                     addNodeToScene(fragment, anchor, it)
                 }
                 .exceptionally {
-                    Toast.makeText(this@MainActivity, "Error", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity, "Could not fetch model from $model", Toast.LENGTH_SHORT).show()
                     return@exceptionally null
                 }
     }
