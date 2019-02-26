@@ -3,7 +3,7 @@ package com.gathergood.calum.ardemo
 import android.graphics.Point
 import android.net.Uri
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
 import com.google.ar.core.Anchor
